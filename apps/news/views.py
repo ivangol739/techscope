@@ -6,7 +6,12 @@ class PostListView(ListView):
     model = Post
     template_name = 'news/post_list.html'
     context_object_name = 'posts'
+    paginate_by = 2
 
+    def get_context_data(self, **kwargs):
+        context = super().get_context_data(**kwargs)
+        context['title'] = 'Главная страница'
+        return context
 
 class PostDetailView(DetailView):
     model = Post
@@ -23,6 +28,7 @@ class PostFromCategoryView(ListView):
     template_name = 'news/post_list.html'
     context_object_name = 'posts'
     category = None
+    paginate_by = 1
 
     def get_queryset(self):
         self.category = Category.objects.get(slug=self.kwargs['slug'])
