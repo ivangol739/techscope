@@ -4,6 +4,9 @@ from .models import Post, Category
 from .forms import PostCreateForm, PostUpdateForm
 from django.contrib.admin.views.decorators import staff_member_required
 from django.views.generic import UpdateView
+from django.contrib.auth.mixins import LoginRequiredMixin
+from django.contrib.messages.views import SuccessMessageMixin
+from ..services.mixins import AuthorRequiredMixin
 
 
 class PostListView(ListView):
@@ -49,17 +52,14 @@ class PostFromCategoryView(ListView):
         return context
 
 
-class PostCreateView(CreateView):
+class PostCreateView(LoginRequiredMixin, AuthorRequiredMixin, CreateView):
     """
     Представление: создание материалов на сайте
     """
     model = Post
     template_name = 'news/post_create.html'
     form_class = PostCreateForm
-
-    @method_decorator(staff_member_required)
-    def dispatch(self, request, *args, **kwargs):
-        return super().dispatch(request, *args, **kwargs)
+    login_url = 'home'
 
     def get_context_data(self, **kwargs):
         context = super().get_context_data(**kwargs)
@@ -71,7 +71,7 @@ class PostCreateView(CreateView):
         return super().form_valid(form)
 
 
-class PostUpdateView(UpdateView):
+class PostUpdateView(AuthorRequiredMixin, SuccessMessageMixin, UpdateView):
     """
     Представление: обновления материала на сайте
     """
@@ -79,10 +79,9 @@ class PostUpdateView(UpdateView):
     template_name = 'news/post_update.html'
     context_object_name = 'post'
     form_class = PostUpdateForm
+    login_url = 'home'
+    success_message = 'Запись была успешно обновлена!'
 
-    @method_decorator(staff_member_required)
-    def dispatch(self, request, *args, **kwargs):
-        return super().dispatch(request, *args, **kwargs)
 
     def get_context_data(self, *, object_list=None, **kwargs):
         context = super().get_context_data(**kwargs)
