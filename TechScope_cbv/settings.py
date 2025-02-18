@@ -47,6 +47,7 @@ INSTALLED_APPS = [
     'debug_toolbar',
     'apps.accounts',
     'taggit',
+    'django_recaptcha',
 ]
 
 MIDDLEWARE = [
@@ -149,3 +150,6 @@ def show_toolbar(request):
 DEBUG_TOOLBAR_CONFIG = {
     "SHOW_TOOLBAR_CALLBACK": show_toolbar,
 }
+
+RECAPTCHA_PUBLIC_KEY = str(os.getenv('RECAPTCHA_PUBLIC_KEY'))
+RECAPTCHA_PRIVATE_KEY = str(os.getenv('RECAPTCHA_PRIVATE_KEY'))
