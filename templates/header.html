@@ -1,5 +1,36 @@
 <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
     <div class="container">
-        <a class="navbar-brand" href="/">TechScope</a>
+        <a class="navbar-brand" href="/">
+            <span class="text-warning">Tech</span><span class="text-light">Scope</span>
+        </a>
+        <div class="d-flex ms-auto align-items-center">
+        {% if request.user.is_authenticated %}
+            <div class="dropdown me-3">
+            <button class="btn btn-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+                {{ request.user }}
+            </button>
+            <ul class="dropdown-menu dropdown-menu-dark dropdown-menu-end">
+                <li>
+                <a class="dropdown-item" href="{% url 'profile_detail' request.user.profile.slug %}">Мой профиль</a>
+                </li>
+                {% if request.user.is_staff %}
+                <li>
+                    <a class="dropdown-item" href="{% url 'post_create' %}">Добавить статью</a>
+                </li>
+                {% endif %}
+                <li><hr class="dropdown-divider"></li>
+                <li>
+                <form action="{% url 'logout' %}" method="POST">
+                    {% csrf_token %}
+                    <a href="#" class="dropdown-item" onclick="parentNode.submit();">Log Out</a>
+                </form>
+                </li>
+            </ul>
+            </div>
+        {% else %}
+            <a href="{% url 'login' %}" class="btn btn-secondary me-2">Вход</a>
+            <a href="{% url 'register' %}" class="btn btn-secondary">Регистрация</a>
+        {% endif %}
         </div>
+    </div>
 </nav>
