@@ -48,6 +48,8 @@ INSTALLED_APPS = [
     'apps.accounts',
     'taggit',
     'django_recaptcha',
+    'ckeditor_uploader',
+    'ckeditor'
 ]
 
 MIDDLEWARE = [
@@ -133,6 +135,7 @@ USE_TZ = True
 
 STATIC_URL = '/static/'
 STATIC_ROOT = (BASE_DIR / 'static')
+CKEDITOR_UPLOAD_PATH = 'uploads/'
 STATICFILES_DIRS = [BASE_DIR / 'templates/js/']
 
 MEDIA_ROOT = (BASE_DIR / 'media')
@@ -153,3 +156,10 @@ DEBUG_TOOLBAR_CONFIG = {
 
 RECAPTCHA_PUBLIC_KEY = str(os.getenv('RECAPTCHA_PUBLIC_KEY'))
 RECAPTCHA_PRIVATE_KEY = str(os.getenv('RECAPTCHA_PRIVATE_KEY'))
+
+CKEDITOR_CONFIGS = {
+    'awesome_ckeditor': {
+        'toolbar': 'full',
+        'height': 300,
+    },
+}

@@ -5,6 +5,7 @@ from django.urls import reverse
 from mptt.models import MPTTModel, TreeForeignKey
 from apps.services.utils import unique_slugify
 from taggit.managers import TaggableManager
+from ckeditor.fields import RichTextField
 
 
 class PostManager(models.Manager):
@@ -52,6 +53,9 @@ class Post(models.Model):
     custom = PostManager()
 
     tags = TaggableManager()
+
+    description = RichTextField(config_name='awesome_ckeditor', verbose_name='Краткое описание', max_length=500)
+    text = RichTextField(config_name='awesome_ckeditor', verbose_name='Полный текст записи')
 
     class Meta:
         db_table = 'news_post'
