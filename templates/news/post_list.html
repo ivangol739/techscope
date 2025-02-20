@@ -1,6 +1,7 @@
 {% extends 'main.html' %}
 
 {% block content %}
+    {% load static %}
     {% for post in posts %}
         <div class="card mb-3">
             <div class="row">
@@ -28,7 +29,22 @@
 	                </div>
 	                {% endif %}
                 </div>
+                <div class="rating-buttons">
+                    <button class="btn btn-sm btn-primary rating-btn" data-post="{{ post.id }}" data-value="1"
+                        data-auth="{{ request.user.is_authenticated|lower }}">
+                        Лайк
+                    </button>
+                    <span id="likes-count-{{ post.id }}">{{ post.get_likes_count }}</span>
+
+                    <button class="btn btn-sm btn-secondary rating-btn" data-post="{{ post.id }}" data-value="-1"
+                        data-auth="{{ request.user.is_authenticated|lower }}">
+                        Дизлайк
+                    </button>
+                    <span id="dislikes-count-{{ post.id }}">{{ post.get_dislikes_count }}</span>
+                </div>
             </div>
         </div>
     {% endfor %}
+    <script src="{% static 'ratings.js' %}"></script>
+{% block script %}{% endblock %}
 {% endblock %}

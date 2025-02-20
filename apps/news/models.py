@@ -80,6 +80,11 @@ class Post(models.Model):
         self.slug = unique_slugify(self, self.title, self.slug)
         super().save(*args, **kwargs)
 
+    def get_likes_count(self):
+        return self.ratings.filter(value=1).count()
+
+    def get_dislikes_count(self):
+        return self.ratings.filter(value=1).count()
 
 class Category(MPTTModel):
     """
@@ -159,3 +164,24 @@ class Comment(MPTTModel):
 
     def __str__(self):
         return f'{self.author}:{self.content}'
+
+
+class Rating(models.Model):
+    """
+    Модель рейтинга: Лайк - Дизлайк
+    """
+    post = models.ForeignKey(to=Post, verbose_name='Запись', on_delete=models.CASCADE, related_name='ratings')
+    user = models.ForeignKey(to=User, verbose_name='Пользователь', on_delete=models.CASCADE, blank=True, null=True)
+    value = models.IntegerField(verbose_name='Значение', choices=[(1, 'Нравится'), (-1, 'Не нравится')])
+    time_create = models.DateTimeField(verbose_name='Время добавления', auto_now_add=True)
+    ip_address = models.GenericIPAddressField(verbose_name='IP Адрес')
+
+    class Meta:
+        unique_together = ('post', 'ip_address')
+        ordering = ('-time_create',)
+        indexes = [models.Index(fields=['-time_create', 'value'])]
+        verbose_name = 'Рейтинг'
+        verbose_name_plural = 'Рейтинги'
+
+    def __str__(self):
+        return self.post.title
