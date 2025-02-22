@@ -16,12 +16,6 @@
             </div>
         </div>
     </div>
-    <div class="rating-buttons">
-        <button class="btn btn-sm btn-primary" data-post="{{ post.id }}" data-value="1">Лайк</button>
-        <span id="likes-count-{{ post.id }}">{{ post.get_likes_count }}</span>
-        <button class="btn btn-sm btn-secondary" data-post="{{ post.id }}" data-value="-1">Дизлайк</button>
-        <span id="dislikes-count-{{ post.id }}">{{ post.get_dislikes_count }}</span>
-    </div>
 	{% if post.tags.all %}
 	<div class="card-footer border-0">
 		Теги: {% for tag in post.tags.all %} <a href="{% url 'post_by_tags' tag.slug %}">{{ tag }}</a>, {% endfor %}

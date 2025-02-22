@@ -14,7 +14,6 @@ from .models import Comment
 from taggit.models import Tag
 from django.http import JsonResponse
 from django.views.generic import View
-from .models import Rating
 
 
 class PostListView(ListView):
@@ -156,32 +155,3 @@ class PostByTagListView(ListView):
         context['title'] = f'Статьи по тегу: {self.tag.name}'
         return context
 
-class RatingCreateView(View):
-    model = Rating
-
-    def post(self, request, *args, **kwargs):
-        if not request.user.is_authenticated:
-            return JsonResponse({'error': 'Вы должны быть авторизованы для оценки.'}, status=403)
-
-        post_id = request.POST.get('post_id')
-        value = int(request.POST.get('value'))
-        user = request.user
-
-        rating, created = self.model.objects.get_or_create(
-            post_id=post_id,
-            user=user,
-            defaults={'value': value},
-        )
-
-        if not created:
-            if rating.value == value:
-                rating.delete()  # Удаляем, если повторно нажали
-            else:
-                rating.value = value
-                rating.save()
-
-        post = rating.post
-        return JsonResponse({
-            'likes': post.get_likes_count(),
-            'dislikes': post.get_dislikes_count(),
-        })
