@@ -1,5 +1,6 @@
 from django import forms
 from .models import Post, Comment
+from django_ckeditor_5.widgets import CKEditor5Widget
 
 
 class PostCreateForm(forms.ModelForm):
@@ -11,16 +12,27 @@ class PostCreateForm(forms.ModelForm):
         model = Post
         fields = ('title', 'category', 'description', 'text', 'thumbnail', 'status', 'tags')
 
+        widgets = {
+            # Применяем CKEditor только для полей 'description' и 'text'
+            'description': CKEditor5Widget(
+                attrs={"class": "django_ckeditor_5"}, config_name="extends"
+            ),
+            'text': CKEditor5Widget(
+                attrs={"class": "django_ckeditor_5"}, config_name="extends"
+            )
+        }
+
     def __init__(self, *args, **kwargs):
         """
         Обновление стилей формы под Bootstrap
         """
         super().__init__(*args, **kwargs)
         for field in self.fields:
-            self.fields[field].widget.attrs.update({
-                'class': 'form-control',
-                'autocomplete': 'off'
-            })
+            if field not in ['text', 'description']:
+                self.fields[field].widget.attrs.update({
+                    'class': 'form-control',
+                    'autocomplete': 'off'
+                })
 
 class PostUpdateForm(PostCreateForm):
     """
