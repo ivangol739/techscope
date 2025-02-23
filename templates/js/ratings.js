@@ -1,29 +1,46 @@
-const ratingButtons = document.querySelectorAll('.rating-buttons');
+const ratingButtons = document.querySelectorAll('.like-button');
 
 ratingButtons.forEach(button => {
     button.addEventListener('click', event => {
-        // Получаем значение рейтинга из data-атрибута кнопки
-        const value = parseInt(event.target.dataset.value)
-        const postId = parseInt(event.target.dataset.post)
-        const ratingSum = button.querySelector('.rating-sum');
-        // Создаем объект FormData для отправки данных на сервер
-        const formData = new FormData();
-        // Добавляем id статьи, значение кнопки
-        formData.append('post_id', postId);
-        formData.append('value', value);
-        // Отправляем AJAX-Запрос на сервер
-        fetch("/rating/", {
-            method: "POST",
-            headers: {
-                "X-CSRFToken": csrftoken,
-                "X-Requested-With": "XMLHttpRequest",
-            },
-            body: formData
-        }).then(response => response.json())
-        .then(data => {
-            // Обновляем значение на кнопке
-            ratingSum.textContent = data.rating_sum;
-        })
-        .catch(error => console.error(error));
+        // Проверяем, не заблокирована ли кнопка
+        if (!event.target.closest('.btn').classList.contains('disabled')) {
+            // Получаем значение рейтинга и ID поста
+            const value = 1; // Лайк
+            const postId = parseInt(event.target.closest('.like-button').dataset.post);
+            const ratingSum = button.querySelector('.rating-sum');
+            const iconHeart = button.querySelector('i');
+
+            const formData = new FormData();
+            formData.append('post_id', postId);
+            formData.append('value', value);
+
+            fetch("/rating/", {
+                method: "POST",
+                headers: {
+                    "X-CSRFToken": csrftoken,
+                    "X-Requested-With": "XMLHttpRequest",
+                },
+                body: formData
+            })
+            .then(response => response.json())
+            .then(data => {
+                if (data.error) {
+                    alert(data.error); // Показать ошибку, если не авторизован
+                } else {
+                    // Обновляем счетчик лайков
+                    ratingSum.textContent = data.rating_sum;
+
+                    // Обновляем иконку сердечка (заполненное или пустое)
+                    if (iconHeart.classList.contains('far')) {
+                        iconHeart.classList.remove('far');
+                        iconHeart.classList.add('fas');
+                    } else {
+                        iconHeart.classList.remove('fas');
+                        iconHeart.classList.add('far');
+                    }
+                }
+            })
+            .catch(error => console.error(error));
+        }
     });
 });

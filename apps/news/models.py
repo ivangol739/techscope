@@ -54,7 +54,6 @@ class Post(models.Model):
 
     tags = TaggableManager()
 
-
     class Meta:
         db_table = 'news_post'
         ordering = ['-fixed', '-create']
@@ -79,9 +78,19 @@ class Post(models.Model):
         super().save(*args, **kwargs)
 
     def get_sum_rating(self):
-        return sum([rating.value for rating in self.ratings.all()])
+        return self.ratings.filter(value=True).count()
 
+    def user_liked(self, user):
+        """
+        Проверяем, поставил ли текущий пользователь лайк.
+        Возвращает True, если пользователь поставил лайк, иначе False.
+        """
+        if user.is_authenticated:
+            return self.ratings.filter(user=user, value=True).exists()
+        return False
 
+    def __str__(self):
+        return self.title
 
 class Category(MPTTModel):
     """
@@ -164,23 +173,18 @@ class Comment(MPTTModel):
 
 
 class Rating(models.Model):
-    """
-    Модель рейтинга: Лайк - Дизлайк
-    """
     post = models.ForeignKey(to=Post, verbose_name='Запись', on_delete=models.CASCADE, related_name='ratings')
     user = models.ForeignKey(to=User, verbose_name='Пользователь', on_delete=models.CASCADE, blank=True, null=True)
-    value = models.IntegerField(verbose_name='Значение', choices=[(1, 'Нравится'), (-1, 'Не нравится')])
+    value = models.IntegerField(verbose_name='Значение', choices=[(1, 'Нравится')])  # Только лайк
     time_create = models.DateTimeField(verbose_name='Время добавления', auto_now_add=True)
-    ip_address = models.GenericIPAddressField(verbose_name='IP Адрес')
+    ip_address = models.GenericIPAddressField(verbose_name='IP Адрес', null=True)
 
     class Meta:
-        unique_together = ('post', 'ip_address')
+        unique_together = ('post', 'user')  # Уникальность для комбинации поста и пользователя
         ordering = ('-time_create',)
-        indexes = [models.Index(fields=['-time_create', 'value'])]
         verbose_name = 'Рейтинг'
         verbose_name_plural = 'Рейтинги'
 
     def __str__(self):
-        return self.post.title
-
+        return f"Рейтинг для {self.post.title} от {self.user.username}"
 

@@ -1,6 +1,6 @@
 from django.utils.decorators import method_decorator
 from django.views.generic import ListView, DetailView, CreateView
-from .models import Post, Category
+from .models import Post, Category, Rating, Comment
 from .forms import PostCreateForm, PostUpdateForm
 from django.contrib.admin.views.decorators import staff_member_required
 from django.views.generic import UpdateView
@@ -10,12 +10,10 @@ from ..services.mixins import AuthorRequiredMixin
 from django.http import JsonResponse
 from django.shortcuts import redirect
 from .forms import CommentCreateForm
-from .models import Comment
 from taggit.models import Tag
-from django.http import JsonResponse
 from django.views.generic import View
-from .models import Rating
-
+from django.shortcuts import get_object_or_404
+from django.shortcuts import render
 
 class PostListView(ListView):
     model = Post
@@ -156,27 +154,42 @@ class PostByTagListView(ListView):
         context['title'] = f'Статьи по тегу: {self.tag.name}'
         return context
 
-class RatingCreateView(View):
-    model = Rating
 
+class RatingCreateView(View):
     def post(self, request, *args, **kwargs):
         post_id = request.POST.get('post_id')
         value = int(request.POST.get('value'))
-        x_forwarded_for = request.META.get('HTTP_X_FORWARDED_FOR')
-        ip = x_forwarded_for.split(',')[0] if x_forwarded_for else request.META.get('REMOTE_ADDR')
+        post = Post.objects.get(id=post_id)
         user = request.user if request.user.is_authenticated else None
 
-        rating, created = self.model.objects.get_or_create(
-           post_id=post_id,
-            ip_address=ip,
-            defaults={'value': value, 'user': user},
+        if not user:
+            return JsonResponse({'error': 'Необходимо авторизоваться'}, status=400)
+
+        # Проверяем, поставил ли пользователь лайк
+        rating, created = Rating.objects.get_or_create(
+            post=post,
+            user=user,
+            defaults={'value': value},
         )
 
         if not created:
             if rating.value == value:
-                rating.delete()
+                rating.delete()  # Удаляем лайк, если пользователь кликает повторно
             else:
                 rating.value = value
-                rating.user = user
-                rating.save()
-        return JsonResponse({'rating_sum': rating.post.get_sum_rating()})
+                rating.save()  # Обновляем лайк
+
+        return JsonResponse({'rating_sum': post.get_sum_rating()})
+
+
+def post_detail(request, post_id):
+    post = Post.objects.get(id=post_id)
+
+    # Проверяем, поставил ли текущий пользователь лайк
+    user_liked = post.user_liked(request.user)
+
+    # Передаем информацию в контекст
+    return render(request, 'post_detail.html', {
+        'post': post,
+        'user_liked': user_liked,  # Передаем флаг о лайке для пользователя
+    })
