@@ -29,7 +29,7 @@ SECRET_KEY = str(os.getenv('SECRET_KEY'))
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['127.0.0.1']
 
 
 # Application definition
@@ -90,8 +90,12 @@ WSGI_APPLICATION = 'TechScope_cbv.wsgi.application'
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': BASE_DIR / 'db.sqlite3',
+        'ENGINE': 'django.db.backends.postgresql',
+        'NAME': 'techscope',
+        'USER': 'postgres',
+        'PASSWORD': str(os.getenv('POSTGRES_PASSWORD')),
+        'HOST': '127.0.0.1',
+        'PORT': '5432',
     }
 }
 

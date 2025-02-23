@@ -1,0 +1,1176 @@
+[
+{
+  "model": "admin.logentry",
+  "pk": 1,
+  "fields": {
+    "action_time": "2025-02-22T20:04:29.388Z",
+    "user": 1,
+    "content_type": 7,
+    "object_id": "1",
+    "object_repr": "Новости",
+    "action_flag": 1,
+    "change_message": "[{\"added\": {}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 2,
+  "fields": {
+    "action_time": "2025-02-22T20:04:41.366Z",
+    "user": 1,
+    "content_type": 7,
+    "object_id": "2",
+    "object_repr": "Статьи",
+    "action_flag": 1,
+    "change_message": "[{\"added\": {}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 3,
+  "fields": {
+    "action_time": "2025-02-22T20:04:54.101Z",
+    "user": 1,
+    "content_type": 7,
+    "object_id": "3",
+    "object_repr": "Технологии",
+    "action_flag": 1,
+    "change_message": "[{\"added\": {}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 4,
+  "fields": {
+    "action_time": "2025-02-22T20:05:13.506Z",
+    "user": 1,
+    "content_type": 7,
+    "object_id": "4",
+    "object_repr": "Python",
+    "action_flag": 1,
+    "change_message": "[{\"added\": {}}]"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 1,
+  "fields": {
+    "name": "Can add log entry",
+    "content_type": 1,
+    "codename": "add_logentry"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 2,
+  "fields": {
+    "name": "Can change log entry",
+    "content_type": 1,
+    "codename": "change_logentry"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 3,
+  "fields": {
+    "name": "Can delete log entry",
+    "content_type": 1,
+    "codename": "delete_logentry"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 4,
+  "fields": {
+    "name": "Can view log entry",
+    "content_type": 1,
+    "codename": "view_logentry"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 5,
+  "fields": {
+    "name": "Can add permission",
+    "content_type": 2,
+    "codename": "add_permission"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 6,
+  "fields": {
+    "name": "Can change permission",
+    "content_type": 2,
+    "codename": "change_permission"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 7,
+  "fields": {
+    "name": "Can delete permission",
+    "content_type": 2,
+    "codename": "delete_permission"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 8,
+  "fields": {
+    "name": "Can view permission",
+    "content_type": 2,
+    "codename": "view_permission"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 9,
+  "fields": {
+    "name": "Can add group",
+    "content_type": 3,
+    "codename": "add_group"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 10,
+  "fields": {
+    "name": "Can change group",
+    "content_type": 3,
+    "codename": "change_group"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 11,
+  "fields": {
+    "name": "Can delete group",
+    "content_type": 3,
+    "codename": "delete_group"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 12,
+  "fields": {
+    "name": "Can view group",
+    "content_type": 3,
+    "codename": "view_group"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 13,
+  "fields": {
+    "name": "Can add user",
+    "content_type": 4,
+    "codename": "add_user"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 14,
+  "fields": {
+    "name": "Can change user",
+    "content_type": 4,
+    "codename": "change_user"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 15,
+  "fields": {
+    "name": "Can delete user",
+    "content_type": 4,
+    "codename": "delete_user"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 16,
+  "fields": {
+    "name": "Can view user",
+    "content_type": 4,
+    "codename": "view_user"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 17,
+  "fields": {
+    "name": "Can add content type",
+    "content_type": 5,
+    "codename": "add_contenttype"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 18,
+  "fields": {
+    "name": "Can change content type",
+    "content_type": 5,
+    "codename": "change_contenttype"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 19,
+  "fields": {
+    "name": "Can delete content type",
+    "content_type": 5,
+    "codename": "delete_contenttype"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 20,
+  "fields": {
+    "name": "Can view content type",
+    "content_type": 5,
+    "codename": "view_contenttype"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 21,
+  "fields": {
+    "name": "Can add session",
+    "content_type": 6,
+    "codename": "add_session"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 22,
+  "fields": {
+    "name": "Can change session",
+    "content_type": 6,
+    "codename": "change_session"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 23,
+  "fields": {
+    "name": "Can delete session",
+    "content_type": 6,
+    "codename": "delete_session"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 24,
+  "fields": {
+    "name": "Can view session",
+    "content_type": 6,
+    "codename": "view_session"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 25,
+  "fields": {
+    "name": "Can add Категория",
+    "content_type": 7,
+    "codename": "add_category"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 26,
+  "fields": {
+    "name": "Can change Категория",
+    "content_type": 7,
+    "codename": "change_category"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 27,
+  "fields": {
+    "name": "Can delete Категория",
+    "content_type": 7,
+    "codename": "delete_category"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 28,
+  "fields": {
+    "name": "Can view Категория",
+    "content_type": 7,
+    "codename": "view_category"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 29,
+  "fields": {
+    "name": "Can add Статья",
+    "content_type": 8,
+    "codename": "add_post"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 30,
+  "fields": {
+    "name": "Can change Статья",
+    "content_type": 8,
+    "codename": "change_post"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 31,
+  "fields": {
+    "name": "Can delete Статья",
+    "content_type": 8,
+    "codename": "delete_post"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 32,
+  "fields": {
+    "name": "Can view Статья",
+    "content_type": 8,
+    "codename": "view_post"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 33,
+  "fields": {
+    "name": "Can add Комментарий",
+    "content_type": 9,
+    "codename": "add_comment"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 34,
+  "fields": {
+    "name": "Can change Комментарий",
+    "content_type": 9,
+    "codename": "change_comment"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 35,
+  "fields": {
+    "name": "Can delete Комментарий",
+    "content_type": 9,
+    "codename": "delete_comment"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 36,
+  "fields": {
+    "name": "Can view Комментарий",
+    "content_type": 9,
+    "codename": "view_comment"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 37,
+  "fields": {
+    "name": "Can add Рейтинг",
+    "content_type": 10,
+    "codename": "add_rating"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 38,
+  "fields": {
+    "name": "Can change Рейтинг",
+    "content_type": 10,
+    "codename": "change_rating"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 39,
+  "fields": {
+    "name": "Can delete Рейтинг",
+    "content_type": 10,
+    "codename": "delete_rating"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 40,
+  "fields": {
+    "name": "Can view Рейтинг",
+    "content_type": 10,
+    "codename": "view_rating"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 41,
+  "fields": {
+    "name": "Can add Профиль",
+    "content_type": 11,
+    "codename": "add_profile"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 42,
+  "fields": {
+    "name": "Can change Профиль",
+    "content_type": 11,
+    "codename": "change_profile"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 43,
+  "fields": {
+    "name": "Can delete Профиль",
+    "content_type": 11,
+    "codename": "delete_profile"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 44,
+  "fields": {
+    "name": "Can view Профиль",
+    "content_type": 11,
+    "codename": "view_profile"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 45,
+  "fields": {
+    "name": "Can add tag",
+    "content_type": 12,
+    "codename": "add_tag"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 46,
+  "fields": {
+    "name": "Can change tag",
+    "content_type": 12,
+    "codename": "change_tag"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 47,
+  "fields": {
+    "name": "Can delete tag",
+    "content_type": 12,
+    "codename": "delete_tag"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 48,
+  "fields": {
+    "name": "Can view tag",
+    "content_type": 12,
+    "codename": "view_tag"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 49,
+  "fields": {
+    "name": "Can add tagged item",
+    "content_type": 13,
+    "codename": "add_taggeditem"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 50,
+  "fields": {
+    "name": "Can change tagged item",
+    "content_type": 13,
+    "codename": "change_taggeditem"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 51,
+  "fields": {
+    "name": "Can delete tagged item",
+    "content_type": 13,
+    "codename": "delete_taggeditem"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 52,
+  "fields": {
+    "name": "Can view tagged item",
+    "content_type": 13,
+    "codename": "view_taggeditem"
+  }
+},
+{
+  "model": "auth.user",
+  "pk": 1,
+  "fields": {
+    "password": "pbkdf2_sha256$870000$7sJ9eSxxIIpuuJsQymSTK1$uYFDpdLPletyxwkzOjXFxPQH6bW9/XfrcYSCv1GM1PE=",
+    "last_login": "2025-02-23T19:28:07.240Z",
+    "is_superuser": true,
+    "username": "admin",
+    "first_name": "",
+    "last_name": "",
+    "email": "ivanlychnik@gmail.com",
+    "is_staff": true,
+    "is_active": true,
+    "date_joined": "2025-02-22T17:16:38.827Z",
+    "groups": [],
+    "user_permissions": []
+  }
+},
+{
+  "model": "auth.user",
+  "pk": 2,
+  "fields": {
+    "password": "pbkdf2_sha256$870000$cRKTLuLBaFVDWOb5kArMgh$QXQG7lDUdASekP+4Wkpv/4tDdjlRzAlHf+ZO9RlObTs=",
+    "last_login": "2025-02-23T19:07:27.205Z",
+    "is_superuser": false,
+    "username": "ivan",
+    "first_name": "ivan",
+    "last_name": "gol",
+    "email": "sfdf@efef.com",
+    "is_staff": false,
+    "is_active": true,
+    "date_joined": "2025-02-22T23:02:37.011Z",
+    "groups": [],
+    "user_permissions": []
+  }
+},
+{
+  "model": "contenttypes.contenttype",
+  "pk": 1,
+  "fields": {
+    "app_label": "admin",
+    "model": "logentry"
+  }
+},
+{
+  "model": "contenttypes.contenttype",
+  "pk": 2,
+  "fields": {
+    "app_label": "auth",
+    "model": "permission"
+  }
+},
+{
+  "model": "contenttypes.contenttype",
+  "pk": 3,
+  "fields": {
+    "app_label": "auth",
+    "model": "group"
+  }
+},
+{
+  "model": "contenttypes.contenttype",
+  "pk": 4,
+  "fields": {
+    "app_label": "auth",
+    "model": "user"
+  }
+},
+{
+  "model": "contenttypes.contenttype",
+  "pk": 5,
+  "fields": {
+    "app_label": "contenttypes",
+    "model": "contenttype"
+  }
+},
+{
+  "model": "contenttypes.contenttype",
+  "pk": 6,
+  "fields": {
+    "app_label": "sessions",
+    "model": "session"
+  }
+},
+{
+  "model": "contenttypes.contenttype",
+  "pk": 7,
+  "fields": {
+    "app_label": "news",
+    "model": "category"
+  }
+},
+{
+  "model": "contenttypes.contenttype",
+  "pk": 8,
+  "fields": {
+    "app_label": "news",
+    "model": "post"
+  }
+},
+{
+  "model": "contenttypes.contenttype",
+  "pk": 9,
+  "fields": {
+    "app_label": "news",
+    "model": "comment"
+  }
+},
+{
+  "model": "contenttypes.contenttype",
+  "pk": 10,
+  "fields": {
+    "app_label": "news",
+    "model": "rating"
+  }
+},
+{
+  "model": "contenttypes.contenttype",
+  "pk": 11,
+  "fields": {
+    "app_label": "accounts",
+    "model": "profile"
+  }
+},
+{
+  "model": "contenttypes.contenttype",
+  "pk": 12,
+  "fields": {
+    "app_label": "taggit",
+    "model": "tag"
+  }
+},
+{
+  "model": "contenttypes.contenttype",
+  "pk": 13,
+  "fields": {
+    "app_label": "taggit",
+    "model": "taggeditem"
+  }
+},
+{
+  "model": "sessions.session",
+  "pk": "k4sxir88db0t4ruqvw8eis71c97hnao5",
+  "fields": {
+    "session_data": ".eJxVjEEOwiAQRe_C2pAB2pJx6d4zkJkBpGogKe3KeHdt0oVu_3vvv1SgbS1h62kJc1RnZdTpd2OSR6o7iHeqt6al1XWZWe-KPmjX1xbT83K4fweFevnWODrD1g2ePYMXizSaKTsbrcgEDg3aATlnzxJdooQgAIAuR0TLZNT7A8grN5Y:1tmHYC:pFWHo6aFIAXVtQaANr-0dhrmEiyXGKepytNGekC4o5A",
+    "expire_date": "2025-03-09T19:22:04.506Z"
+  }
+},
+{
+  "model": "sessions.session",
+  "pk": "o1emioo3u2yiyaog7jmnnmt9bogwhjkm",
+  "fields": {
+    "session_data": ".eJxVjEEOwiAQRe_C2pAB2pJx6d4zkJkBpGogKe3KeHdt0oVu_3vvv1SgbS1h62kJc1RnZdTpd2OSR6o7iHeqt6al1XWZWe-KPmjX1xbT83K4fweFevnWODrD1g2ePYMXizSaKTsbrcgEDg3aATlnzxJdooQgAIAuR0TLZNT7A8grN5Y:1tltY2:pP2cab5dYD_jSdoeojg-kiXCq6XZBGDY2OkQlzdIsqE",
+    "expire_date": "2025-03-08T17:44:18.847Z"
+  }
+},
+{
+  "model": "sessions.session",
+  "pk": "vsghdnkygd09bi1x2ley7egg8jpz1vq8",
+  "fields": {
+    "session_data": ".eJxVjEEOwiAQRe_C2pAB2pJx6d4zkJkBpGogKe3KeHdt0oVu_3vvv1SgbS1h62kJc1RnZdTpd2OSR6o7iHeqt6al1XWZWe-KPmjX1xbT83K4fweFevnWODrD1g2ePYMXizSaKTsbrcgEDg3aATlnzxJdooQgAIAuR0TLZNT7A8grN5Y:1tltOK:89KSoAeeXm3stM8nXYdYDZapyAO-nrO4iid-OgFUcnY",
+    "expire_date": "2025-03-08T17:34:16.164Z"
+  }
+},
+{
+  "model": "sessions.session",
+  "pk": "y5xhrucjwoflsp9yh7wlxy01rfrgbsk8",
+  "fields": {
+    "session_data": ".eJxVjEEOwiAQRe_C2pApMEBduvcMZICpVA0kpV0Z765NutDtf-_9lwi0rSVsnZcwZ3EWSpx-t0jpwXUH-U711mRqdV3mKHdFHrTLa8v8vBzu30GhXr61dkSGQCOgT2yNBz1kYHB2MjYSjpDZqJG1nzCCoTx4B8n6iOhBGSfeH8XRNtk:1tmHJu:Hcjgsp9tIRI7QqUyME-Qwiav5p3Mfh1Ctim5-IHkNWg",
+    "expire_date": "2025-03-09T19:07:18.412Z"
+  }
+},
+{
+  "model": "news.post",
+  "pk": 1,
+  "fields": {
+    "title": "bgbgf",
+    "slug": "bgbgf",
+    "description": "<p>fgbgfb</p>",
+    "text": "<p>fgbfgb</p>",
+    "category": 3,
+    "thumbnail": "default.jpg",
+    "status": "published",
+    "create": "2025-02-22T20:07:01.231Z",
+    "update": "2025-02-22T20:07:01.231Z",
+    "author": 1,
+    "updater": null,
+    "fixed": false
+  }
+},
+{
+  "model": "news.post",
+  "pk": 2,
+  "fields": {
+    "title": "gfbgfb",
+    "slug": "gfbgfb",
+    "description": "<p>fgbfgb</p>",
+    "text": "<p>gfbfgbgb</p>",
+    "category": 1,
+    "thumbnail": "images/thumbnails/images.jpg",
+    "status": "published",
+    "create": "2025-02-22T20:07:26.622Z",
+    "update": "2025-02-22T20:07:26.622Z",
+    "author": 1,
+    "updater": null,
+    "fixed": false
+  }
+},
+{
+  "model": "news.post",
+  "pk": 3,
+  "fields": {
+    "title": "ggregr",
+    "slug": "ggregr",
+    "description": "<p>egergre</p>",
+    "text": "<p>egreg</p>",
+    "category": 1,
+    "thumbnail": "default.jpg",
+    "status": "published",
+    "create": "2025-02-23T18:22:52.678Z",
+    "update": "2025-02-23T18:22:52.678Z",
+    "author": 1,
+    "updater": null,
+    "fixed": false
+  }
+},
+{
+  "model": "news.post",
+  "pk": 4,
+  "fields": {
+    "title": "kjknjn",
+    "slug": "kjknjn",
+    "description": "<p>fbdb</p>",
+    "text": "<p>dbdbdb</p>",
+    "category": 1,
+    "thumbnail": "default.jpg",
+    "status": "published",
+    "create": "2025-02-23T18:54:37.515Z",
+    "update": "2025-02-23T18:54:37.515Z",
+    "author": 1,
+    "updater": null,
+    "fixed": false
+  }
+},
+{
+  "model": "news.post",
+  "pk": 5,
+  "fields": {
+    "title": "df df df df",
+    "slug": "df-df-df-df",
+    "description": "<p>df df f</p>",
+    "text": "<p>d d df&nbsp;</p>",
+    "category": 3,
+    "thumbnail": "default.jpg",
+    "status": "published",
+    "create": "2025-02-23T18:55:11.623Z",
+    "update": "2025-02-23T18:55:11.623Z",
+    "author": 1,
+    "updater": null,
+    "fixed": false
+  }
+},
+{
+  "model": "news.post",
+  "pk": 6,
+  "fields": {
+    "title": "Probing GPT model",
+    "slug": "probing-gpt-model",
+    "description": "<p>Привет, друзья! Этот туториал посвящён зондированию (probing) — простому, но мощному методу для изучения внутренней работы LLM (больших языковых моделей). С его помощью можно получить приближенные знания о паттернах, которые выучивает модель и о том, как эти знания распространяются по слоям</p>",
+    "text": "<p style=\"margin-left:0px;\">Привет, друзья! Этот туториал посвящён зондированию (probing) — простому, но мощному методу для изучения внутренней работы LLM (больших языковых моделей). С его помощью можно получить приближенные знания о паттернах, которые выучивает модель и о том, как эти знания распространяются по слоям.<br><br>Метод простой, но довольно интересный. К туториалу прилагается ноутбук с кодом. Всех заинтересовавшихся — прошу к чтению!</p><h2 style=\"margin-left:0px;\">Идея зондирования</h2><p style=\"margin-left:0px;\">Техники \"зондирования модели\"&nbsp;(в литературе — probing)&nbsp;— это множество простых идейно и эффективных методов анализа внутренних представлений.&nbsp;Смысл процесса зондирования исходит из определения слова — \"зондирование\" (канглийский вариант \"probing\") — это изучение, исследование или изучение чего-либо глубоким способом — на основе погружения. Так, можно зондировать почву — лезть в глубину грунта или желудок — лезть в глубину желудка.&nbsp;</p><p style=\"margin-left:0px;\">Идея напрашивается сама собой — давайте залезем внутрь модели!&nbsp;</p>",
+    "category": 3,
+    "thumbnail": "default.jpg",
+    "status": "published",
+    "create": "2025-02-23T19:02:52.770Z",
+    "update": "2025-02-23T19:02:52.770Z",
+    "author": 1,
+    "updater": null,
+    "fixed": false
+  }
+},
+{
+  "model": "news.category",
+  "pk": 1,
+  "fields": {
+    "title": "Новости",
+    "slug": "novosti",
+    "description": "Раздел для новостей",
+    "parent": null,
+    "lft": 1,
+    "rght": 4,
+    "tree_id": 1,
+    "level": 0
+  }
+},
+{
+  "model": "news.category",
+  "pk": 2,
+  "fields": {
+    "title": "Статьи",
+    "slug": "stati",
+    "description": "Раздел для статей",
+    "parent": null,
+    "lft": 1,
+    "rght": 4,
+    "tree_id": 2,
+    "level": 0
+  }
+},
+{
+  "model": "news.category",
+  "pk": 3,
+  "fields": {
+    "title": "Технологии",
+    "slug": "tehnologii",
+    "description": "Раздел о технологиях",
+    "parent": 1,
+    "lft": 2,
+    "rght": 3,
+    "tree_id": 1,
+    "level": 1
+  }
+},
+{
+  "model": "news.category",
+  "pk": 4,
+  "fields": {
+    "title": "Python",
+    "slug": "python",
+    "description": "Раздел о Python",
+    "parent": 2,
+    "lft": 2,
+    "rght": 3,
+    "tree_id": 2,
+    "level": 1
+  }
+},
+{
+  "model": "news.rating",
+  "pk": 97,
+  "fields": {
+    "post": 2,
+    "user": 1,
+    "value": 1,
+    "time_create": "2025-02-23T18:21:00.363Z",
+    "ip_address": null
+  }
+},
+{
+  "model": "news.rating",
+  "pk": 103,
+  "fields": {
+    "post": 3,
+    "user": 1,
+    "value": 1,
+    "time_create": "2025-02-23T18:23:02.195Z",
+    "ip_address": null
+  }
+},
+{
+  "model": "news.rating",
+  "pk": 118,
+  "fields": {
+    "post": 1,
+    "user": 2,
+    "value": 1,
+    "time_create": "2025-02-23T18:38:51.740Z",
+    "ip_address": null
+  }
+},
+{
+  "model": "news.rating",
+  "pk": 167,
+  "fields": {
+    "post": 6,
+    "user": 2,
+    "value": 1,
+    "time_create": "2025-02-23T19:07:28.227Z",
+    "ip_address": null
+  }
+},
+{
+  "model": "news.rating",
+  "pk": 168,
+  "fields": {
+    "post": 5,
+    "user": 2,
+    "value": 1,
+    "time_create": "2025-02-23T19:07:30.373Z",
+    "ip_address": null
+  }
+},
+{
+  "model": "news.rating",
+  "pk": 184,
+  "fields": {
+    "post": 6,
+    "user": 1,
+    "value": 1,
+    "time_create": "2025-02-23T19:30:15.040Z",
+    "ip_address": null
+  }
+},
+{
+  "model": "accounts.profile",
+  "pk": 1,
+  "fields": {
+    "user": 1,
+    "slug": "admin",
+    "avatar": "images/avatars/default.png",
+    "bio": "",
+    "birth_date": null
+  }
+},
+{
+  "model": "accounts.profile",
+  "pk": 2,
+  "fields": {
+    "user": 2,
+    "slug": "ivan",
+    "avatar": "images/avatars/default.png",
+    "bio": "",
+    "birth_date": null
+  }
+},
+{
+  "model": "taggit.tag",
+  "pk": 1,
+  "fields": {
+    "name": "fgb",
+    "slug": "fgb"
+  }
+},
+{
+  "model": "taggit.tag",
+  "pk": 2,
+  "fields": {
+    "name": "gbf",
+    "slug": "gbf"
+  }
+},
+{
+  "model": "taggit.tag",
+  "pk": 3,
+  "fields": {
+    "name": "dj",
+    "slug": "dj"
+  }
+},
+{
+  "model": "taggit.tag",
+  "pk": 4,
+  "fields": {
+    "name": "Django",
+    "slug": "django"
+  }
+},
+{
+  "model": "taggit.tag",
+  "pk": 5,
+  "fields": {
+    "name": "Python",
+    "slug": "python"
+  }
+},
+{
+  "model": "taggit.tag",
+  "pk": 6,
+  "fields": {
+    "name": "Ai",
+    "slug": "ai"
+  }
+},
+{
+  "model": "taggit.tag",
+  "pk": 7,
+  "fields": {
+    "name": "dajno",
+    "slug": "dajno"
+  }
+},
+{
+  "model": "taggit.tag",
+  "pk": 8,
+  "fields": {
+    "name": "pythom",
+    "slug": "pythom"
+  }
+},
+{
+  "model": "taggit.tag",
+  "pk": 9,
+  "fields": {
+    "name": "revvrev",
+    "slug": "revvrev"
+  }
+},
+{
+  "model": "taggit.tag",
+  "pk": 10,
+  "fields": {
+    "name": "rfvevger",
+    "slug": "rfvevger"
+  }
+},
+{
+  "model": "taggit.tag",
+  "pk": 11,
+  "fields": {
+    "name": "rwferv",
+    "slug": "rwferv"
+  }
+},
+{
+  "model": "taggit.tag",
+  "pk": 12,
+  "fields": {
+    "name": "tech",
+    "slug": "tech"
+  }
+},
+{
+  "model": "taggit.tag",
+  "pk": 13,
+  "fields": {
+    "name": "vrever",
+    "slug": "vrever"
+  }
+},
+{
+  "model": "taggit.taggeditem",
+  "pk": 1,
+  "fields": {
+    "tag": 1,
+    "content_type": 8,
+    "object_id": 1
+  }
+},
+{
+  "model": "taggit.taggeditem",
+  "pk": 2,
+  "fields": {
+    "tag": 2,
+    "content_type": 8,
+    "object_id": 2
+  }
+},
+{
+  "model": "taggit.taggeditem",
+  "pk": 3,
+  "fields": {
+    "tag": 3,
+    "content_type": 8,
+    "object_id": 3
+  }
+},
+{
+  "model": "taggit.taggeditem",
+  "pk": 4,
+  "fields": {
+    "tag": 4,
+    "content_type": 8,
+    "object_id": 4
+  }
+},
+{
+  "model": "taggit.taggeditem",
+  "pk": 5,
+  "fields": {
+    "tag": 5,
+    "content_type": 8,
+    "object_id": 4
+  }
+},
+{
+  "model": "taggit.taggeditem",
+  "pk": 6,
+  "fields": {
+    "tag": 4,
+    "content_type": 8,
+    "object_id": 5
+  }
+},
+{
+  "model": "taggit.taggeditem",
+  "pk": 7,
+  "fields": {
+    "tag": 6,
+    "content_type": 8,
+    "object_id": 6
+  }
+},
+{
+  "model": "taggit.taggeditem",
+  "pk": 8,
+  "fields": {
+    "tag": 7,
+    "content_type": 8,
+    "object_id": 6
+  }
+},
+{
+  "model": "taggit.taggeditem",
+  "pk": 9,
+  "fields": {
+    "tag": 8,
+    "content_type": 8,
+    "object_id": 6
+  }
+},
+{
+  "model": "taggit.taggeditem",
+  "pk": 10,
+  "fields": {
+    "tag": 9,
+    "content_type": 8,
+    "object_id": 6
+  }
+},
+{
+  "model": "taggit.taggeditem",
+  "pk": 11,
+  "fields": {
+    "tag": 10,
+    "content_type": 8,
+    "object_id": 6
+  }
+},
+{
+  "model": "taggit.taggeditem",
+  "pk": 12,
+  "fields": {
+    "tag": 11,
+    "content_type": 8,
+    "object_id": 6
+  }
+},
+{
+  "model": "taggit.taggeditem",
+  "pk": 13,
+  "fields": {
+    "tag": 12,
+    "content_type": 8,
+    "object_id": 6
+  }
+},
+{
+  "model": "taggit.taggeditem",
+  "pk": 14,
+  "fields": {
+    "tag": 13,
+    "content_type": 8,
+    "object_id": 6
+  }
+}
+]
